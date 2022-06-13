@@ -110,19 +110,17 @@ const searchButton = document.createElement("button");
 const searchImg = document.createElement("img");
 
   let searchHTML = ""; 
-  searchHTML += "<label for='search' class='student-search'>" 
-  searchHTML += "<span> Search by name</span>" 
-  searchHTML += "<input id='search' placeholder='Search by name...'>"
-  searchHTML += "<button type='button'>" 
-  searchHTML += "<img src='img/icn-search.svg' alt = 'Search icon'></img>" 
+  searchHTML += "<label for='search' class='student-search'>"; 
+  searchHTML += "<span> Search by name</span>"; 
+  searchHTML += "<input id='search' placeholder='Search by name...'>";
+  searchHTML += "<button type='button'>"; 
+  searchHTML += "<img src='img/icn-search.svg' alt = 'Search icon'></img>";
   searchHTML += "</button>" + "</label>";
 
-body.insertAdjacentHTML("afterbegin", searchHTML);
+body.insertAdjacentHTML("beforebegin", searchHTML);
 
 
 
 
-console.log(searchSpan);
-console.log(searchLabel);
-console.log(searchInput);
-console.log(searchButton);
+
+
