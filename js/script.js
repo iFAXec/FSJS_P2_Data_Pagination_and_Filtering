@@ -99,19 +99,30 @@ const searchLabel = document.createElement("label");
 const searchSpan = document.createElement("span");
 const searchInput = document.createElement("input");
 const searchButton = document.createElement("button");
+const searchImg = document.createElement("img");
+console.log(searchImg);
 
 function searchBar() {
   searchLabel.setAttribute("for", "search");
   searchLabel.className = "student-search";
   searchSpan.innerHTML = "Search by name";
+  searchLabel.appendChild(searchSpan);
+
   searchInput.placeholder = "Search by name...";
   searchInput.setAttribute("id","search");
+  searchSpan.appendChild(searchInput);
+
   searchButton.setAttribute("type", "button");
-  searchHTML = `
-  ${searchLabel}
+  searchInput.appendChild(searchButton);
+  searchButton.appendChild(searchImg);
+
+  let searchHTML = "";
   
-  `;  
-  return searchHTML;  
+       searchHTML += `<label>${searchLabel}</label>`;
+       searchHTML += `<span>${searchSpan}</span>`;
+
+       return searchHTML;
+   
 }
 
 searchBar();
