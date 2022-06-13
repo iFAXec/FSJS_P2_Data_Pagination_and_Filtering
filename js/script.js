@@ -113,7 +113,7 @@ const searchImg = document.createElement("img");
 function searchBar() {
   searchLabel.setAttribute("for", "search");
   searchLabel.className = "student-search";
-  searchSpan.innerHTML = "Search by name";
+  searchSpan.textContent = "Search by name";
   searchLabel.appendChild(searchSpan);
 
   searchInput.placeholder = "Search by name...";
@@ -121,6 +121,8 @@ function searchBar() {
   searchSpan.appendChild(searchInput);
 
   searchButton.setAttribute("type", "button");
+  searchButton.setAttribute("alt", "Search icon");
+  
   searchInput.appendChild(searchButton);
   searchButton.appendChild(searchImg);
 
@@ -128,13 +130,15 @@ function searchBar() {
   
        searchHTML += `<label>${searchLabel}</label>`;
        searchHTML += `<span>${searchSpan}</span>`;
+       searchHTML += `${searchInput}`;
+       searchHTML += `${searchButton}`;
 
        return searchHTML;
    
 }
 searchBar();
 
-body.insertAdjacentHTML("beforebegin", searchHTML)
+body.insertAdjacentHTML("beforebegin", searchBar);
 
 
 
