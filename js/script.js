@@ -18,12 +18,17 @@ Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
+//showPage function takes two parameters which will take student data and page as arguements
 function showPage(list, page) {
+  
+  //Two variables which will display start and end index of student data 
    const startIndex = ( page * 9 ) - 9;
    const endIndex = page * 9;
 
+    
    const studentListUL = document.querySelector(".student-list");
    // console.log(studentListUL);
+   //student list is set to an empty string so remove string
    studentListUL.innerHTML = "";
    let html = "";
 
@@ -46,18 +51,20 @@ function showPage(list, page) {
    studentListUL.insertAdjacentHTML("beforeend", html);    
 }
 
-
-
 /*
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 
+
 function addPagination(list) {
   // console.log(list);
+
+  //variable show the number of the pagination button needed
   const numOfPages = Math.ceil(list.length/9);
   // console.log(numOfPages);    
   const linkListUL = document.querySelector(".link-list");
+  //the list is set to am empty string to remove data if present
   linkListUL.innerHTML = "";
   let buttonHTML = "";
 
@@ -95,12 +102,13 @@ addPagination(data);
 
 //Search bar
 
+const body = document.querySelector("body");
 const searchLabel = document.createElement("label");
 const searchSpan = document.createElement("span");
 const searchInput = document.createElement("input");
 const searchButton = document.createElement("button");
 const searchImg = document.createElement("img");
-console.log(searchImg);
+
 
 function searchBar() {
   searchLabel.setAttribute("for", "search");
@@ -124,8 +132,11 @@ function searchBar() {
        return searchHTML;
    
 }
-
 searchBar();
+
+body.insertAdjacentHTML("beforebegin", searchHTML)
+
+
 
 console.log(searchBar())
 console.log(searchSpan);
