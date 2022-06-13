@@ -138,7 +138,7 @@ function searchBar() {
 }
 searchBar();
 
-body.insertAdjacentHTML("beforebegin", searchBar);
+body.insertAdjacentHTML("afterbegin", searchBar);
 
 
 
