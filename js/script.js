@@ -109,8 +109,6 @@ const searchInput = document.createElement("input");
 const searchButton = document.createElement("button");
 const searchImg = document.createElement("img");
 
-
-function searchBar() {  
   let searchHTML = ""; 
   searchHTML += "<label for='search' class='student-search'>" 
   searchHTML += "<span> Search by name</span>" 
@@ -119,16 +117,11 @@ function searchBar() {
   searchHTML += "<img src='img/icn-search.svg' alt = 'Search icon'></img>" 
   searchHTML += "</button>" + "</label>";
 
-  return searchHTML;
-   
-}
-searchBar();
-
-body.insertAdjacentHTML("afterbegin", searchBar);
+body.insertAdjacentHTML("afterbegin", searchHTML);
 
 
 
-console.log(searchBar())
+
 console.log(searchSpan);
 console.log(searchLabel);
 console.log(searchInput);
