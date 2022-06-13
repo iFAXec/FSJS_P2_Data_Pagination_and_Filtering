@@ -110,30 +110,16 @@ const searchButton = document.createElement("button");
 const searchImg = document.createElement("img");
 
 
-function searchBar() {
-  searchLabel.setAttribute("for", "search");
-  searchLabel.className = "student-search";
-  searchSpan.textContent = "Search by name";
-  searchLabel.appendChild(searchSpan);
+function searchBar() {  
+  let searchHTML = ""; 
+  searchHTML += "<label for='search' class='student-search'>" 
+  searchHTML += "<span> Search by name</span>" 
+  searchHTML += "<input id='search' placeholder='Search by name...'>"
+  searchHTML += "<button type='button'>" 
+  searchHTML += "<img src='img/icn-search.svg' alt = 'Search icon'></img>" 
+  searchHTML += "</button>" + "</label>";
 
-  searchInput.placeholder = "Search by name...";
-  searchInput.setAttribute("id","search");
-  searchSpan.appendChild(searchInput);
-
-  searchButton.setAttribute("type", "button");
-  searchButton.setAttribute("alt", "Search icon");
-  
-  searchInput.appendChild(searchButton);
-  searchButton.appendChild(searchImg);
-
-  let searchHTML = "";
-  
-       searchHTML += `<label>${searchLabel}</label>`;
-       searchHTML += `<span>${searchSpan}</span>`;
-       searchHTML += `${searchInput}`;
-       searchHTML += `${searchButton}`;
-
-       return searchHTML;
+  return searchHTML;
    
 }
 searchBar();
