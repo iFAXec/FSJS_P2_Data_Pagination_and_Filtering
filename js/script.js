@@ -46,7 +46,7 @@ function showPage(list, page) {
    studentListUL.insertAdjacentHTML("beforeend", html);    
 }
 
-showPage(data,1);
+
 
 /*
 Create the `addPagination` function
@@ -70,29 +70,54 @@ function addPagination(list) {
     // console.log(buttonHTML);
 }
 
-linkListUL.insertAdjacentElement("beforeend", buttonHTML);
+linkListUL.insertAdjacentHTML("beforeend", buttonHTML);
 
-const button = document.querySelector("type['button']");
-console.log(button);
+const button = document.querySelectorAll("button[type='button']");
+button.className = "active";
+// console.log(button);
 
-
-
-// linkListUL.addEventListener("click", (e)=>{
-//   const buttonClicked = e.target;
-//   if(buttonClicked === "BUTTON"){
-
-
-
-
-//   }
-// });
-
+linkListUL.addEventListener("click", (e)=>{
+  const buttonClicked = e.target;
+  if(buttonClicked.tagName === "BUTTON"){
+    const activeClassButton = document.getElementsByClassName("active");
+    activeClassButton.className = "";  
+    activeClassButton.className="active";
+    showPage(list,buttonClicked.textContent);
+    // console.log(activeClassButton);
+  }
+});
 }
-
-addPagination(data);
-
 
 
 // Call functions
+showPage(data,1);
+addPagination(data);
 
+//Search bar
 
+const searchLabel = document.createElement("label");
+const searchSpan = document.createElement("span");
+const searchInput = document.createElement("input");
+const searchButton = document.createElement("button");
+
+function searchBar() {
+  searchLabel.setAttribute("for", "search");
+  searchLabel.className = "student-search";
+  searchSpan.innerHTML = "Search by name";
+  searchInput.placeholder = "Search by name...";
+  searchInput.setAttribute("id","search");
+  searchButton.setAttribute("type", "button");
+  searchHTML = `
+  ${searchLabel}
+  
+  `;  
+  return searchHTML;  
+}
+
+searchBar();
+
+console.log(searchBar())
+console.log(searchSpan);
+console.log(searchLabel);
+console.log(searchInput);
+console.log(searchButton);
