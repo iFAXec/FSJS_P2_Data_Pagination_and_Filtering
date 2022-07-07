@@ -68,7 +68,7 @@ function addPagination(list) {
   linkListUL.innerHTML = "";
   let buttonHTML = "";
 
-  for (let i = 1; i < numOfPages; i++) {
+  for (let i = 1; i <= numOfPages; i++) {
     buttonHTML += `
     <li>
       <button type="button">${i}</button>
@@ -88,7 +88,7 @@ linkListUL.addEventListener("click", (e)=>{
   if(buttonClicked.tagName === "BUTTON"){
     const activeClassButton = document.getElementsByClassName("active");
     activeClassButton[0].className= "";   
-    activeClassButton.className="active";
+    buttonClicked.className="active";
     showPage(list,buttonClicked.textContent);
     // console.log(activeClassButton);
   }
@@ -120,21 +120,21 @@ const searchImg = document.createElement("img");
 body.insertAdjacentHTML("beforebegin", searchHTML);
 
 const search = document.querySelector("#search");
-// const cardName = document.querySelector(h3);
-// console.log(cardName);
+const cardName = document.querySelector(h3);
+console.log(cardName);
 
-// function searchName(searchInput, names) {
-//   console.log(searchInput);
-//   console.log(names);
-//   for(let i=0; i < names.length; i++){
-//     names[i].className.remove("match");
-//     if(searchName.value.length !== 0 && names[i].textContent.toLowerCase().includes(searchName.value.toLowerCase())){
-//       names[i].classList.add("match");      
-//     }
-//   }  
-// }
+function searchName(searchInput, names) {
+  console.log(searchInput);
+  console.log(names);
+  for(let i=0; i < names.length; i++){
+    names[i].className.remove("match");
+    if(searchName.value.length !== 0 && names[i].textContent.toLowerCase().includes(searchName.value.toLowerCase())){
+      names[i].classList.add("match");      
+    }
+  }  
+}
 
-// searchName(search, cardName);
+searchName(search, cardName);
 
 
 
