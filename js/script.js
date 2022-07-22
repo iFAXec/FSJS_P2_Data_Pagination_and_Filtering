@@ -121,15 +121,14 @@ body.insertAdjacentHTML("beforebegin", searchHTML);
 
 const search = document.querySelector("#search");
 
-
-
-function searchName(searchInput, names) {
-  console.log(searchInput);
-  console.log(names);
- 
+function searchName(search) {
+  const name = search.value.tolowercase();
+  return data.filter(name);
+  console.log(data); 
+  
 }
 
-
+searchName();
 
 
 
