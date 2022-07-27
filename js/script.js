@@ -121,14 +121,14 @@ body.insertAdjacentHTML("beforebegin", searchHTML);
 
 const search = document.querySelector("#search");
 
-function searchName(search) {
-  const name = search.value.tolowercase();
-  return data.filter(name);
-  console.log(data); 
-  
+function searchName(){
+  const searchValue = search.value.toLowerCase();
+  data.filter(student =>{
+    console.log(student);
+  });   
 }
 
-searchName();
+search.addEventListener("keyup", searchName);
 
 
 
